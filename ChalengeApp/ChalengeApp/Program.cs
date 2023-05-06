@@ -37,7 +37,7 @@ foreach (var employee in employees)
 {
     if (employee.Result > maxResult)
     {
-        //  maxResult = employee1.Result;
+        maxResult = employee.Result;
         employeeWithMaxResult = employee;
     }
 }
