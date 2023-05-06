@@ -1,68 +1,75 @@
-﻿
-// Przygotuj program, który policzy ile jakich cyfr
-// występuje w podanej liczbie
+﻿using System.Reflection;
+Employee employee1 = new Employee("Adam", "Nowicki", 22);
+Employee employee2 = new Employee("Monika", "Druk", 28);
+Employee employee3 = new Employee("Zuzia", "Pika", 34);
 
-// Przykład
-// Wyniki dla liczby: 4566
-// 0 => 0
-// 1 => 0
-// 2 => 0
-// 3 => 0
-// 4 => 1
-// 5 => 1
-// 6 => 2
-// 7 => 0
-// 8 => 0
-// 9 => 0
+employee1.AddScore(5);
+employee1.AddScore(9);
+employee1.AddScore(9);
+employee1.AddScore(9);
+employee1.AddScore(4);
 
-using System.Diagnostics.Metrics;
+employee2.AddScore(2);
+employee2.AddScore(5);
+employee2.AddScore(9);
+employee2.AddScore(8);
+employee2.AddScore(8);
 
-int number = 4566;
-string numberInString = number.ToString();
-char[] letters = numberInString.ToArray();
+employee3.AddScore(6);
+employee3.AddScore(1);
+employee3.AddScore(5);
+employee3.AddScore(6);
+employee3.AddScore(6);
 
-int counter0 = 0;
-int counter1 = 0;
-int counter2 = 0;
-int counter3 = 0;
-int counter4 = 0;
-int counter5 = 0;
-int counter6 = 0;
-int counter7 = 0;
-int counter8 = 0;
-int counter9 = 0;
-
-foreach (char letter in letters)
+List<Employee> employees = new List<Employee>()
 {
-    if (letter == '0') { counter0++; }
-    //{
-      //  Console.WriteLine("0 =>" + counter0);
-   // }
-    else if (letter == '1') { counter1++; }
-    else if (letter == '2') { counter2++; }
-    else if (letter == '3') { counter3++; }
-    else if (letter == '4') { counter4++; }
-    else if (letter == '5') { counter5++; }
-    else if (letter == '6') { counter6++; }
-    else if (letter == '7') { counter7++; }
-    else if (letter == '8') { counter8++; }
-    else if (letter == '9') { counter9++; }
-   
-}
+     employee1, employee2,employee3
+};
+
+int maxResult = -1;
+Employee employeeWithMaxResult = null;
+
+foreach (var employee in employees)
 {
-    Console.WriteLine("0 ==" + counter0);
-    Console.WriteLine("1 ==" + counter1);
-    Console.WriteLine("2 ==" + counter2);
-    Console.WriteLine("3 ==" + counter3);
-    Console.WriteLine("4 ==" + counter4);
-    Console.WriteLine("5 ==" + counter5);
-    Console.WriteLine("6 ==" + counter6);
-    Console.WriteLine("7 ==" + counter7);
-    Console.WriteLine("8 ==" + counter8);
-    Console.WriteLine("9 ==" + counter9);
+    if (employee.Result > maxResult)
+    {
+        //  maxResult = employee1.Result;
+        employeeWithMaxResult = employee;
+    }
+
 
 }
 
-// Kod ProgramuKursu C# Adam Kamizelich
-// Dzień 5 Tablice, Listy
-// Zadanie Domowe
+Console.WriteLine("Najlepszy pracownik to: ", employeeWithMaxResult.Name + " " + employeeWithMaxResult.Surname);
+Console.WriteLine(" Ktory uzyskal wynik: ", employeeWithMaxResult.Result + " Punktow ");
+Console.WriteLine("Który ma: ", employeeWithMaxResult.Age, " Age ");
+
+class Employee
+{
+    public List<int> score = new List<int>();
+
+
+    public Employee(string Name, string Surname, int Age)
+    {
+
+
+        this.Name = Name;
+        this.Surname = Surname;
+        this.Age = Age;
+        //this.Result = Result;
+    }
+    public string Name { get; private set; }
+    public string Surname { get; private set; }
+    public int Age { get; private set; }
+    public int Result
+    {
+        get
+        {
+            return this.score.Sum();
+        }
+    }
+    public void AddScore(int score)
+    {
+        this.score.Add(score);
+    }
+}
