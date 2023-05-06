@@ -1,4 +1,8 @@
-﻿using System.Reflection;
+﻿using ChalengeApp;
+
+Console.WriteLine("Zadanie Domowe Dzien 6 ");
+Console.WriteLine(" ");
+
 Employee employee1 = new Employee("Adam", "Nowicki", 22);
 Employee employee2 = new Employee("Monika", "Druk", 28);
 Employee employee3 = new Employee("Zuzia", "Pika", 34);
@@ -36,40 +40,10 @@ foreach (var employee in employees)
         //  maxResult = employee1.Result;
         employeeWithMaxResult = employee;
     }
-
-
 }
 
-Console.WriteLine("Najlepszy pracownik to: ", employeeWithMaxResult.Name + " " + employeeWithMaxResult.Surname);
-Console.WriteLine(" Ktory uzyskal wynik: ", employeeWithMaxResult.Result + " Punktow ");
-Console.WriteLine("Który ma: ", employeeWithMaxResult.Age, " Age ");
-
-class Employee
-{
-    public List<int> score = new List<int>();
+Console.WriteLine("Najlepszy pracownik to: " + employeeWithMaxResult.Name + " " + employeeWithMaxResult.Surname);
+Console.WriteLine(" Ktory uzyskal wynik: " + employeeWithMaxResult.Result + " Points ");
+Console.WriteLine("Który ma: " + employeeWithMaxResult.Age + " Age ");
 
 
-    public Employee(string Name, string Surname, int Age)
-    {
-
-
-        this.Name = Name;
-        this.Surname = Surname;
-        this.Age = Age;
-        //this.Result = Result;
-    }
-    public string Name { get; private set; }
-    public string Surname { get; private set; }
-    public int Age { get; private set; }
-    public int Result
-    {
-        get
-        {
-            return this.score.Sum();
-        }
-    }
-    public void AddScore(int score)
-    {
-        this.score.Add(score);
-    }
-}
