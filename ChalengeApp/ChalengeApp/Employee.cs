@@ -2,8 +2,9 @@
 {
     public class Employee
     {
-        public List<int> score = new List<int>();
 
+        public List<int> score = new List<int>();
+        
         public Employee(string Name, string Surname, int Age)
         {
             this.Name = Name;

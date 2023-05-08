@@ -25,6 +25,9 @@ employee3.AddScore(5);
 employee3.AddScore(6);
 employee3.AddScore(6);
 
+int age1 = 10;
+int age2 = 3;
+
 List<Employee> employees = new List<Employee>()
 {
      employee1, employee2,employee3
