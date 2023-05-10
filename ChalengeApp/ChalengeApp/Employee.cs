@@ -4,7 +4,12 @@
     {
 
         public List<int> score = new List<int>();
-        
+
+        // public Employee(string Name, string Surname, int Age)
+        //{
+        //      this.Name = Name;
+        //    }
+
         public Employee(string Name, string Surname, int Age)
         {
             this.Name = Name;
