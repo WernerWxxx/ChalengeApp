@@ -36,6 +36,7 @@
             statistics.Average = statistics.Average / this.grades.Count;
 
             return statistics;
+
         }
     }
 }

@@ -8,7 +8,7 @@ var employee = new Employee("Adam", "Nowicki");
 
 employee.AddGrade(2);
 employee.AddGrade(7);
-employee.AddGrade(4);
+employee.AddGrade(4); 
 
 
 var Statistics = employee.GetStatistics();
