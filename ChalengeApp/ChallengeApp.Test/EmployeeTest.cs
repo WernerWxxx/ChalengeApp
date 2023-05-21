@@ -60,24 +60,24 @@ namespace ChallengeApp.Test
 
         }
 
-      //  [Test]  // 4
-      //  public void FalshPointsTest()
+         //   [Test]  // 4
+        //    public void FalshPointsTest()
         //{
             // arrange
-           // var employee = new Employee("Adam", "Nowicki");
+        //    var employee = new Employee("Adam", "Nowicki");
 
-           // employee.AddGrade(2);
-           // employee.AddGrade(7);
-            //employee.AddGrade(5);
+        //    employee.AddGrade(2);
+        //    employee.AddGrade(7);
+        //    employee.AddGrade(5);
 
             // act
-           // var statistics = employee.GetStatistics();
+        //    var statistics = employee.GetStatistics();
 
-            // assert
-            //Assert.AreEqual(6.67, statistics.Average, 0.01);
-          //  Assert.AreEqual(Math.Round(4.33, 2), Math.Round(statistics.Average, 2));
+            //assert
+        //    Assert.AreEqual(6.67, statistics.Average, 0.01);
+         //   Assert.AreEqual(Math.Round(4.33, 2), Math.Round(statistics.Average, 2));
 
-       //  }
+        // }
 
     }
 

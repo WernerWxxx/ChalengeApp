@@ -19,7 +19,7 @@
 
         public Statistics GetStatistics()
         {
-            // Implementacja Obiektu   3:20 min
+            // Implementacja Obiektu   3:20 min//
             var statistics = new Statistics();
             statistics.Average = 0;
             statistics.Max = float.MinValue;

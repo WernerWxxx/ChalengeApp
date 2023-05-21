@@ -3,7 +3,7 @@
 Console.WriteLine("Zadanie Domowe Dzien 9 ");
 Console.WriteLine(" ");
 
-var employee = new Employee("Adam", "Nowicki");
+var employee = new Employee("Adam", "Nowicki");  //
 employee.AddGrade(2);
 employee.AddGrade(7);
 employee.AddGrade(4);
