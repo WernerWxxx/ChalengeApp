@@ -1,12 +1,14 @@
 ﻿using ChalengeApp;
 
-Console.WriteLine("Zadanie Domowe Dzien 9 ");
+Console.WriteLine("Zadanie Domowe Dzien 10 ");
 Console.WriteLine(" ");
 
-var employee = new Employee("Adam", "Nowicki");  //
-employee.AddGrade(2);
+var employee = new Employee("Anna", "Stelmach");  //
+employee.AddGrade(2000);
+employee.AddGrade("Monika");
+employee.AddGrade(4.44);
+employee.AddGrade(8.5F);
 employee.AddGrade(7);
-employee.AddGrade(4);
 
 var statistics = employee.GetStatistics();
 

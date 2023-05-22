@@ -9,7 +9,7 @@ namespace ChallengeApp.Test
         {
 
             // arrange
-            var employee = new Employee("Adam", "Nowicki");
+            var employee = new Employee("Anna", "Stelmach");
 
             employee.AddGrade(2);
             employee.AddGrade(7);
@@ -28,7 +28,7 @@ namespace ChallengeApp.Test
         public void MinPointsTest()
         {
             // arrange
-            var employee = new Employee("Adam", "Nowicki");
+            var employee = new Employee("Anna", "Stelmach");
             employee.AddGrade(2);
             employee.AddGrade(7);
             employee.AddGrade(4);
@@ -45,7 +45,7 @@ namespace ChallengeApp.Test
         public void AveragePointsTest()
         {
             // arrange
-            var employee = new Employee("Adam", "Nowicki");
+            var employee = new Employee("Anna", "Stelmach");
 
             employee.AddGrade(2);
             employee.AddGrade(7);
@@ -60,22 +60,22 @@ namespace ChallengeApp.Test
 
         }
 
-         //   [Test]  // 4
+        //   [Test]  // 4
         //    public void FalshPointsTest()
         //{
-            // arrange
-        //    var employee = new Employee("Adam", "Nowicki");
+        // arrange
+        //    var employee = new Employee("Anna", "Stelmach");
 
         //    employee.AddGrade(2);
         //    employee.AddGrade(7);
         //    employee.AddGrade(5);
 
-            // act
+        // act
         //    var statistics = employee.GetStatistics();
 
-            //assert
+        //assert
         //    Assert.AreEqual(6.67, statistics.Average, 0.01);
-         //   Assert.AreEqual(Math.Round(4.33, 2), Math.Round(statistics.Average, 2));
+        //   Assert.AreEqual(Math.Round(4.33, 2), Math.Round(statistics.Average, 2));
 
         // }
 
