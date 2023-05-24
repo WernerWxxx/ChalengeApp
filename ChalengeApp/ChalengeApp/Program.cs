@@ -6,7 +6,7 @@ Console.WriteLine(" ");
 var employee = new Employee("Anna", "Stelmach");  //
 employee.AddGrade(2000);
 employee.AddGrade("Monika");
-employee.AddGrade(4.44);
+employee.AddGrade(4);
 employee.AddGrade(8.5F);
 employee.AddGrade(7);
 
