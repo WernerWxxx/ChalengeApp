@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "WSL": {
+      "commandName": "WSL2",
+      "distributionName": ""
+    },
+    "Profil 1": {
+      "commandName": "Project",
+      "workingDirectory": "C:\\Users\\tlenp\\Documents\\Visual Studio 2022\\Programy Katalog\\ChalengeApp\\ChalengeApp"
+    }
+  }
+}
