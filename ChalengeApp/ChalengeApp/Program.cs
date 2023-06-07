@@ -1,4 +1,5 @@
 ﻿using ChalengeApp;
+using System.Diagnostics;
 
 Console.WriteLine("Zadanie Domowe Dzien 10 ");
 Console.WriteLine(" ");
@@ -6,8 +7,8 @@ Console.WriteLine(" ");
 var employee = new Employee("Anna", "Stelmach");  //
 employee.AddGrade(2000);
 employee.AddGrade("Monika");
-employee.AddGrade(4);
-employee.AddGrade(8.5F);
+employee.AddGrade(4.4f);
+employee.AddGrade(8.5f);
 employee.AddGrade(7);
 
 var statistics = employee.GetStatistics();
