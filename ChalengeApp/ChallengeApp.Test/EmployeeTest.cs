@@ -1,5 +1,5 @@
 ﻿using ChalengeApp;
-
+//{
 namespace ChallengeApp.Test
 {
     public class EmployeeTest
@@ -14,15 +14,16 @@ namespace ChallengeApp.Test
 
             employee.AddGrade(2000);
             employee.AddGrade("Monika");
-            employee.AddGrade(4.4f);
-            employee.AddGrade(8.5f);
+            employee.AddGrade("4000");
             employee.AddGrade(7);
+            employee.AddGrade(8);
+            employee.AddGrade(9.5f);
 
             // act
             var statistics = employee.GetStatistics();
 
             // assert
-            Assert.AreEqual(8.5f, statistics.Max);
+            Assert.AreEqual(9.5f, statistics.Max);
 
         }
 
@@ -34,15 +35,16 @@ namespace ChallengeApp.Test
             var employee = new Employee("Anna", "Stelmach");
             employee.AddGrade(2000);
             employee.AddGrade("Monika");
-            employee.AddGrade(4.4f);
-            employee.AddGrade(8.5f);
+            employee.AddGrade("4000");
             employee.AddGrade(7);
+            employee.AddGrade(8);
+            employee.AddGrade(9.5f);
 
             // act
             var statistics = employee.GetStatistics();
 
             // assert
-            Assert.AreEqual(4.4f, statistics.Min);
+            Assert.AreEqual(7, statistics.Min);
 
         }
 
@@ -53,18 +55,17 @@ namespace ChallengeApp.Test
             var employee = new Employee("Anna", "Stelmach");
             employee.AddGrade(2000);
             employee.AddGrade("Monika");
-            employee.AddGrade(4.4f);
-            employee.AddGrade(8.5f);
+            employee.AddGrade("4000");
             employee.AddGrade(7);
+            employee.AddGrade(8);
+            employee.AddGrade(9.5f);
 
             // act
             var statistics = employee.GetStatistics();
 
             // assert
-            //Assert.AreEqual(6.67, statistics.Average, 0.01);
-            Assert.AreEqual(Math.Round(6.63f, 2), Math.Round(statistics.Average, 2));
+            Assert.AreEqual(Math.Round(8.17f, 2), Math.Round(statistics.Average, 2));
 
         }
     }
-
 }
