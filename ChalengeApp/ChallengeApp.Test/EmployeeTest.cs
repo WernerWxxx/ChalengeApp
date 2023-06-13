@@ -8,22 +8,16 @@ namespace ChallengeApp.Test
         [Test]  //1
         public void MaxPointsTest()
         {
-
             // arrange
-            var employee = new Employee("Anna", "Stelmach");
+            var employee = new Employee();
 
-            employee.AddGrade(2000);
-            employee.AddGrade("Monika");
-            employee.AddGrade("4000");
-            employee.AddGrade(7);
-            employee.AddGrade(8);
-            employee.AddGrade(9.5f);
+            employee.AddGrade(90);
 
             // act
             var statistics = employee.GetStatistics();
 
             // assert
-            Assert.AreEqual(9.5f, statistics.Max);
+            Assert.AreEqual(90, statistics.Max);
 
         }
 
@@ -32,40 +26,46 @@ namespace ChallengeApp.Test
         public void MinPointsTest()
         {
             // arrange
-            var employee = new Employee("Anna", "Stelmach");
-            employee.AddGrade(2000);
-            employee.AddGrade("Monika");
-            employee.AddGrade("4000");
-            employee.AddGrade(7);
-            employee.AddGrade(8);
-            employee.AddGrade(9.5f);
+            var employee = new Employee();
+
+            employee.AddGrade(20);
 
             // act
             var statistics = employee.GetStatistics();
 
             // assert
-            Assert.AreEqual(7, statistics.Min);
+            Assert.AreEqual(20, statistics.Min);
 
         }
 
         [Test]  // 3
-        public void AveragePointsTest()
+        public void AverageLetterPointsTest()
         {
             // arrange
-            var employee = new Employee("Anna", "Stelmach");
-            employee.AddGrade(2000);
-            employee.AddGrade("Monika");
-            employee.AddGrade("4000");
-            employee.AddGrade(7);
-            employee.AddGrade(8);
-            employee.AddGrade(9.5f);
+            var employee = new Employee();          
+            employee.AddGrade(90);
+            employee.AddGrade(20);
 
             // act
             var statistics = employee.GetStatistics();
 
             // assert
-            Assert.AreEqual(Math.Round(8.17f, 2), Math.Round(statistics.Average, 2));
+            Assert.AreEqual('C', statistics.AverageLetter);
+        }
 
+            [Test]  // 4
+        public void AveragePointsTest()
+        {
+            // arrange
+            var employee = new Employee();
+            employee.AddGrade(90);
+            employee.AddGrade(20);
+
+            // act
+            var statistics = employee.GetStatistics();
+
+            // assert
+            Assert.AreEqual(55, statistics.Average);
         }
     }
 }
