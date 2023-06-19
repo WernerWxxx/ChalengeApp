@@ -1,15 +1,15 @@
 ﻿using ChalengeApp;
 
-Console.WriteLine("Zadanie Domowe Dzien 12 ");
+Console.WriteLine("Zadanie Domowe Dzien 13 ");
 Console.WriteLine(" ");
 Console.WriteLine("Witam w Programie do oceny Pracowników ");
-Console.WriteLine("Program Pobiera wartości ocen Pracowników z Klawiatury");
 Console.WriteLine("====================================================== ");
 Console.WriteLine(" ");
 Console.WriteLine("Jeśli chcesz wyjść z Programu naciśnij Litere - q ");
 Console.WriteLine(" ");
 
 var employee = new Employee();
+
 
 while (true)
 {
@@ -19,12 +19,19 @@ while (true)
     {
         break;
     }
-    employee.AddGrade(input);
+    try
+    {
+        employee.AddGrade(input);
+    }
+    catch (Exception e)
+    {
+        Console.WriteLine($"Exception catched: {e.Message}");
+    }
 }
 
 var statistics = employee.GetStatistics();
 
 Console.WriteLine($"Average: {statistics.Average}");
-Console.WriteLine($"Average: {statistics.AverageLetter}");
+Console.WriteLine($"AverageLetter: {statistics.AverageLetter}");
 Console.WriteLine($"Min: {statistics.Min}");
 Console.WriteLine($"Max: {statistics.Max}");

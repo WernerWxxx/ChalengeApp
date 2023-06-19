@@ -5,12 +5,18 @@
 
         public List<float> grades = new List<float>();
 
+        //private const char sex = 'M';
+
         public Employee()
         {
 
         }
+
         public string Name { get; private set; }
         public string Surname { get; private set; }
+
+
+
 
         public void AddGrade(float grade)
         {
@@ -20,7 +26,7 @@
             }
             else
             {
-                Console.WriteLine("invalid grade value - niewłaściwa wartość");
+                throw new Exception("Float is wrong - niewłaściwa wartość");
             }
         }
         public void AddGrade(string grade)
@@ -30,44 +36,43 @@
 
                 this.AddGrade(result);
             }
+            else if (char.TryParse(grade, out char charResult))
+            {
+
+                switch (charResult)
+                {
+                    case 'A':
+                    case 'a':
+                        this.grades.Add(100);
+                        break;
+                    case 'B':
+                    case 'b':
+                        this.grades.Add(80);
+                        break;
+                    case 'C':
+                    case 'c':
+                        this.grades.Add(60);
+                        break;
+                    case 'D':
+                    case 'd':
+                        this.grades.Add(40);
+                        break;
+                    case 'E':
+                    case 'e':
+                        this.grades.Add(20);
+                        break;
+                    default:
+                        throw new Exception("Wrong Letter");
+                }
+            }
             else
             {
-                Console.WriteLine("String is not float");
+                throw new Exception("Type figure or letter between A - E");
             }
         }
-        public void AddGrade(char grade)
+            public void AddGrade(double grade)
         {
-            switch (grade)
-            {
-                case 'A':
-                case 'a':
-                    this.grades.Add(100);
-                    break;
-                case 'B':
-                case 'b':
-                    this.grades.Add(80);
-                    break;
-                case 'C':
-                case 'c':
-                    this.grades.Add(60);
-                    break;
-                case 'D':
-                case 'd':
-                    this.grades.Add(40);
-                    break;
-                case 'E':
-                case 'e':
-                    this.grades.Add(20);
-                    break;
-                default:
-                    this.grades.Add(0);
-                    Console.WriteLine("Wrong Letter");
-                    break;
-            }
-        }
-
-        public void AddGrade(double grade)
-        {
+            grade = Math.Round(grade, 2);
             float gradeAsFloat = (float)grade;
             this.AddGrade(gradeAsFloat);
         }
@@ -84,9 +89,9 @@
             this.AddGrade(gradeAsFloat);
         }
 
+        // Przygotowanie Metody która zwróci oceny
         public Statistics GetStatistics()
         {
-            // Implementacja Obiektu   3:20 min//
             var statistics = new Statistics();
             statistics.Average = 0;
             statistics.Max = float.MinValue;
@@ -97,7 +102,6 @@
                 statistics.Max = Math.Max(statistics.Max, grade);
                 statistics.Min = Math.Min(statistics.Min, grade);
                 statistics.Average = statistics.Average + grade;
-
             }
             statistics.Average = statistics.Average / this.grades.Count;
 
