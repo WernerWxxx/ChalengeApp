@@ -1,22 +1,19 @@
 ﻿namespace ChalengeApp
 {
-    public class Employee
+    public class Employee : Person
     {
 
-        public List<float> grades = new List<float>();
-
-        //private const char sex = 'M';
+        private List<float> grades = new List<float>();
 
         public Employee()
+          : this("no name", "no surname", "no age", "no gender")
         {
-
         }
 
-        public string Name { get; private set; }
-        public string Surname { get; private set; }
-
-
-
+         public Employee(string name, string surname, string age, string gender)
+             : base(name, surname, age, gender)
+         {
+         }
 
         public void AddGrade(float grade)
         {
