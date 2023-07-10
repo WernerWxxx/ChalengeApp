@@ -1,20 +1,14 @@
 ﻿namespace ChalengeApp
 {
-    public class Employee : Person
+    public class Employee
     {
 
         private List<float> grades = new List<float>();
 
         public Employee()
-          : this("no name", "no surname", "no age", "no gender")
         {
         }
-
-         public Employee(string name, string surname, string age, string gender)
-             : base(name, surname, age, gender)
-         {
-         }
-
+    
         public void AddGrade(float grade)
         {
             if (grade >= 0 && grade <= 100)
@@ -28,46 +22,8 @@
         }
         public void AddGrade(string grade)
         {
-            if (float.TryParse(grade, out float result))
-            {
-
-                this.AddGrade(result);
-            }
-            else if (char.TryParse(grade, out char charResult))
-            {
-
-                switch (charResult)
-                {
-                    case 'A':
-                    case 'a':
-                        this.grades.Add(100);
-                        break;
-                    case 'B':
-                    case 'b':
-                        this.grades.Add(80);
-                        break;
-                    case 'C':
-                    case 'c':
-                        this.grades.Add(60);
-                        break;
-                    case 'D':
-                    case 'd':
-                        this.grades.Add(40);
-                        break;
-                    case 'E':
-                    case 'e':
-                        this.grades.Add(20);
-                        break;
-                    default:
-                        throw new Exception("Wrong Letter");
-                }
-            }
-            else
-            {
-                throw new Exception("Type figure or letter between A - E");
-            }
         }
-            public void AddGrade(double grade)
+        public void AddGrade(double grade)
         {
             grade = Math.Round(grade, 2);
             float gradeAsFloat = (float)grade;
@@ -86,7 +42,34 @@
             this.AddGrade(gradeAsFloat);
         }
 
-        // Przygotowanie Metody która zwróci oceny
+        public void AddGrade(char grade)
+        {
+            switch (grade)
+            {
+                    case 'A':
+                    case 'a':
+                         this.grades.Add(100);
+                        break;
+                    case 'B':
+                    case 'b':
+                        this.grades.Add(80);
+                        break;
+                    case 'C':
+                    case 'c':
+                        this.grades.Add(60);
+                        break;
+                    case 'D':
+                    case 'd':
+                        this.grades.Add(40);
+                        break;
+                    case 'E':
+                    case 'e':
+                        this.grades.Add(20);
+                    break;
+                    default:
+                        throw new Exception("Type figure or letter between A - E");
+            }
+        }
         public Statistics GetStatistics()
         {
             var statistics = new Statistics();

@@ -4,7 +4,7 @@
     {
         public Person(string name, string surname, string age, string gender)
         {
-            this.Name = name;
+            this.Name = name;//
             this.Surname = surname;
             this.Age = age;
             this.Gender = gender;

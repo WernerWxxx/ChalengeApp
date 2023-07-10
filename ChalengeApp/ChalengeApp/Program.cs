@@ -1,6 +1,6 @@
 ﻿using ChalengeApp;
 
-Console.WriteLine("Zadanie Domowe Dzien 14 ");
+Console.WriteLine("Zadanie Domowe Dzien 15 ");
 Console.WriteLine(" ");
 Console.WriteLine("Witam w Programie do oceny Pracowników ");
 Console.WriteLine("====================================================== ");
@@ -8,16 +8,19 @@ Console.WriteLine(" ");
 Console.WriteLine("Jeśli chcesz wyjść z Programu naciśnij Litere - q ");
 Console.WriteLine(" ");
 
-var employee = new Employee("Anna", "Stelmach", "33", "K");
+
+var employee = new Employee();
+             
+var supervisor = new Supervisor("Anna", "Stelmach", 33, 'K');
 
 
-List<Employee> employees = new List<Employee>()
+List <Supervisor> supervisors = new List<Supervisor>()
 {
-     employee
+     supervisor
 };
-Console.WriteLine("Pracownik : " + employee.Name + " " + employee.Surname);
-Console.WriteLine(" ma Lat: " + employee.Age);
-Console.WriteLine("Oznaczenie Płci M - Mężczyzna, K - Kobieta : " + employee.Gender);
+Console.WriteLine("Pracownik : " + supervisor.Name + " " + supervisor.Surname);
+Console.WriteLine(" ma Lat: " + supervisor.Age);
+Console.WriteLine("Oznaczenie Płci M - Mężczyzna, K - Kobieta : " + supervisor.Gender);
 
 while (true)
 {
@@ -27,17 +30,48 @@ while (true)
     {
         break;
     }
-    try
+
+    else if (input.Length == 1)
     {
-        employee.AddGrade(input);
+        if (char.IsLetter(input[0]))
+        {
+            char character = input[0];
+
+            try
+            {
+                supervisor.AddGrade(character);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Exception catched: {e.Message}");
+            }
+        }
+        else
+        {
+            try
+            {
+                supervisor.AddGrade(input);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Exception catched: {e.Message}");
+            }
+        }
     }
-    catch (Exception e)
+    else
     {
-        Console.WriteLine($"Exception catched: {e.Message}");
+        try
+        {
+            supervisor.AddGrade(input);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine($"Exception catched: {e.Message}");
+        }
     }
 }
 
-var statistics = employee.GetStatistics();
+var statistics = supervisor.GetStatistics();
 
 Console.WriteLine($"Average: {statistics.Average}");
 Console.WriteLine($"AverageLetter: {statistics.AverageLetter}");
