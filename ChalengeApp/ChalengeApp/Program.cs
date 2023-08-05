@@ -43,7 +43,7 @@ employee.AddGrade("6-");
 //};
 Console.WriteLine("Pracownik : " + employee.Name + " " + employee.Surname);
 Console.WriteLine(" ma Lat: " + employee.Age);
-//Console.WriteLine("Oznaczenie Płci M - Mężczyzna, K - Kobieta : " + employee.Gender);
+//Console.WriteLine("Oznaczenie Płci M - Mężczyzna, K - Kobieta : " + employee.Gender);//
 
 
 

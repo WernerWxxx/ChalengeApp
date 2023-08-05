@@ -26,7 +26,7 @@
 
         //Statistics GetStatistics();
 
-        //Statistics GetStatistics { get; }
+        //Statistics GetStatistics { get; }//
         Statistics GetStatistics();
 
 

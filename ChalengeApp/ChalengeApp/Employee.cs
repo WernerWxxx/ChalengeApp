@@ -40,7 +40,7 @@
         {
             float gradeAsFloat = grade;
             this.AddGrade(gradeAsFloat);
-        }
+        }//
 
         public void AddGrade(char grade)
         {

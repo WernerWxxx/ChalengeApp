@@ -136,7 +136,7 @@ namespace ChalengeApp
                 throw new Exception("String is not float");
             //}
         }
-        //----------------------------------------------------------
+        //----------------------------------------------------------//
         //public override Statistics GetStatistics()
         //{
         //  var gradesFromFile = this.ReadGradesFromFile();

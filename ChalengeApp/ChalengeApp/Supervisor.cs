@@ -80,7 +80,7 @@
                     AddGrade(0);
                     break;
                 default:
-                    throw new Exception("Give the number from the range of 1 to 6");
+                    throw new Exception("Give the number from the range of 1 to 6");//
             }
         }
     }
