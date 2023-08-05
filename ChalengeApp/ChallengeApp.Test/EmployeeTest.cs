@@ -14,7 +14,7 @@ namespace ChallengeApp.Test
             employee.AddGrade(90);
 
             // act
-            var statistics = employee.GetStatistics();
+            var statistics = employee.Statistics;
 
             // assert
             Assert.AreEqual(90, statistics.Max);
@@ -31,7 +31,7 @@ namespace ChallengeApp.Test
             employee.AddGrade(20);
 
             // act
-            var statistics = employee.GetStatistics();
+            var statistics = employee.Statistics;
 
             // assert
             Assert.AreEqual(20, statistics.Min);
@@ -42,18 +42,18 @@ namespace ChallengeApp.Test
         public void AverageLetterPointsTest()
         {
             // arrange
-            var employee = new Employee();          
+            var employee = new Employee();
             employee.AddGrade(90);
             employee.AddGrade(20);
 
             // act
-            var statistics = employee.GetStatistics();
+            var statistics = employee.Statistics;
 
             // assert
             Assert.AreEqual('C', statistics.AverageLetter);
         }
 
-            [Test]  // 4
+        [Test]  // 4
         public void AveragePointsTest()
         {
             // arrange
@@ -62,7 +62,7 @@ namespace ChallengeApp.Test
             employee.AddGrade(20);
 
             // act
-            var statistics = employee.GetStatistics();
+            var statistics = employee.Statistics;
 
             // assert
             Assert.AreEqual(55, statistics.Average);

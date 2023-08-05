@@ -1,12 +1,12 @@
 ﻿namespace ChalengeApp
 {
-    public class Supervisor : Employee, IEmployee
+    public class Supervisor : Employee//, IEmployee
     {
         private List<float> grades = new List<float>();
 
         public Supervisor(string name, string surname, int age, char gender)
         {
-           this.Name = name;
+            this.Name = name;
             this.Surname = surname;
             this.Age = age;
             this.Gender = gender;
