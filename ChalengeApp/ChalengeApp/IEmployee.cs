@@ -8,8 +8,6 @@
 
         int Age { get; }
 
-        // char Gender { get; }
-
         void AddGrade(float grade);
 
         void AddGrade(double grade);

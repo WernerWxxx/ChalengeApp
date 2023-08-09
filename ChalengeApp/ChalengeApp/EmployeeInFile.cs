@@ -12,9 +12,6 @@
 
         public override void AddGrade(float grade)
         {
-
-            //float gradeAsFloat = (float)grade;
-            //this.AddGrade(gradeAsFloat);
             if (grade >= 0 && grade <= 100)
             {
                using (var writer = File.AppendText(fileName))
@@ -31,24 +28,19 @@
 
         public override void AddGrade(double grade)
         {
-            //grade = Math.Round(grade, 2);
             float gradeAsFloat = (float)grade;
             this.AddGrade(gradeAsFloat);
-            //this.AddGrade((float)grade);
         }
         public override void AddGrade(long grade)
         {
             float gradeAsFloat = (float)grade;
             this.AddGrade(gradeAsFloat);
-            //this.AddGrade((float)grade);
         }
 
         public override void AddGrade(int grade)
         {
             float gradeAsFloat = grade;
             this.AddGrade(gradeAsFloat);
-
-            //this.AddGrade((float)grade);
         }
 
         public override void AddGrade(string grade)
@@ -56,64 +48,62 @@
             switch (grade)
             {
                 case "6":
-                    this.AddGrade(100);
+                    AddGrade(100);
                     break;
-                case "6-":
                 case "-6":
-                    this.AddGrade(95);
+                case "6-":
+                    AddGrade(95);
+                    break;
+                case "+5":
+                case "5+":
+                    AddGrade(85);
                     break;
                 case "5":
-                    this.AddGrade(80);
+                    AddGrade(80);
                     break;
-                case "5+":
-                case "+5":
-                    this.AddGrade(85);
-                    break;
-                case "5-":
                 case "-5":
-                    this.AddGrade(75);
+                case "5-":
+                    AddGrade(75);
+                    break;
+                case "+4":
+                case "4+":
+                    AddGrade(65);
                     break;
                 case "4":
-                    this.AddGrade(60);
+                    AddGrade(60);
                     break;
-                case "4+":
-                case "+4":
-                    this.AddGrade(65);
-                    break;
-                case "4-":
                 case "-4":
-                    this.AddGrade(55);
+                case "4-":
+                    AddGrade(55);
+                    break;
+                case "+3":
+                case "3+":
+                    AddGrade(45);
                     break;
                 case "3":
-                    this.AddGrade(40);
+                    AddGrade(40);
                     break;
-                case "3+":
-                case "+3":
-                    this.AddGrade(45);
-                    break;
-                case "3-":
                 case "-3":
-                    this.AddGrade(35);
+                case "3-":
+                    AddGrade(35);
+                    break;
+                case "+2":
+                case "2+":
+                    AddGrade(25);
                     break;
                 case "2":
-                    this.AddGrade(20);
+                    AddGrade(20);
                     break;
-                case "2+":
-                case "+2":
-                    this.AddGrade(25);
-                    break;
-                case "2-":
                 case "-2":
-                    this.AddGrade(15);
+                case "2-":
+                    AddGrade(15);
+                    break;
+                case "+1":
+                case "1+":
+                    AddGrade(5);
                     break;
                 case "1":
-                    this.AddGrade(0);
-                    break;
-                case "1+":
-                case "+1":
-                    this.AddGrade(5);
-                    break;
-                default:
+                    AddGrade(0);
                     throw new Exception("Give the number from the range of 1 to 6");
             }
         }
