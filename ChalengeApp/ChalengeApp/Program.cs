@@ -5,7 +5,7 @@ Console.WriteLine(" ");
 Console.WriteLine("Witam w Programie do oceny Pracowników ");
 Console.WriteLine("====================================================== ");
 Console.WriteLine(" ");
-Console.WriteLine(" ");
+Console.WriteLine(" ");//
 
 
 var employee = new EmployeeInFile("Anna", "Stelmach", 33);

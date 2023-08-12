@@ -15,10 +15,10 @@
             if (grade >= 0 && grade <= 100)
             {
                using (var writer = File.AppendText(fileName))
-            {
+               {
                 writer.WriteLine(grade);
                 Console.WriteLine($"Successfully added: {grade}"); // - Wyswietla liczby przypisane
-                }
+               }
             }
             else
             {

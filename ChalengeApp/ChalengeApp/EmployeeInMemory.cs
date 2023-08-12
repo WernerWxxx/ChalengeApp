@@ -13,6 +13,11 @@ namespace ChalengeApp
 
         }
 
+        private string ReturnMessage(string message)
+        {
+            return message;
+        }
+
         public override void AddGrade(float grade)
         {
             if (grade >= 0 && grade <= 100)

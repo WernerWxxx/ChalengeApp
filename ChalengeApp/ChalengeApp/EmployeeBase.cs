@@ -2,7 +2,6 @@
 {
     public abstract class EmployeeBase : IEmployee
     {
-
         private List<float> grades = new List<float>();
 
         public EmployeeBase(string name, string surname, int age)
