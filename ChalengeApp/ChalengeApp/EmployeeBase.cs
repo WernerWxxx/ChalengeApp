@@ -2,18 +2,20 @@
 {
     public abstract class EmployeeBase : IEmployee
     {
-        private List<float> grades = new List<float>();
+        public delegate void GradeAddedDelegate(object sender, EventArgs args);
 
-        public EmployeeBase(string name, string surname, int age)
+        public abstract event GradeAddedDelegate GradeAdded;
+
+        public EmployeeBase(string name, string surname)
         {
             this.Name = name;
             this.Surname = surname;
-            this.Age = age;
-            //this.Gender = gender;//
+            //this.Age = age;
+
         }
         public string Name { get; private set; }
         public string Surname { get; private set; }
-        public int Age { get; private set; }
+        //public int Age { get; private set; }
 
         public abstract void AddGrade(float grade);
 

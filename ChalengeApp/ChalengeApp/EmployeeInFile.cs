@@ -1,31 +1,33 @@
-﻿namespace ChalengeApp
+﻿using ChalengeApp;
+
+namespace ChalengeApp
 {
     public class EmployeeInFile : EmployeeBase
     {
+        public override event GradeAddedDelegate GradeAdded;
+
         private const string fileName = "grades.txt";
 
-        public EmployeeInFile(string name, string surname, int age)
-           : base(name, surname, age)
+        public EmployeeInFile(string name, string surname)
+           : base(name, surname)
         {
 
         }
-
         public override void AddGrade(float grade)
         {
             if (grade >= 0 && grade <= 100)
             {
-               using (var writer = File.AppendText(fileName))
-               {
-                writer.WriteLine(grade);
-                Console.WriteLine($"Successfully added: {grade}"); // - Wyswietla liczby przypisane
-               }
+                using (var writer = File.AppendText(fileName))
+                {
+                    writer.WriteLine(grade);
+                }
             }
             else
             {
               throw new Exception("Invalid grade value! Try again.");
             }
         }
-
+        ///////// - 1
         public override void AddGrade(double grade)
         {
             float gradeAsFloat = (float)grade;
@@ -39,7 +41,7 @@
 
         public override void AddGrade(int grade)
         {
-            float gradeAsFloat = grade;
+            float gradeAsFloat = (float)grade;
             this.AddGrade(gradeAsFloat);
         }
 
@@ -149,11 +151,11 @@
         {
             var grades = new List<float>();
             if (File.Exists($"{fileName}"))
-            {
+            {      
                 using (var reader = File.OpenText($"{fileName}"))
                 {
                     var line = reader.ReadLine();
-                    while (line != null)
+                    while(line != null)
                     {
                         var number = float.Parse(line);
                         grades.Add(number);
@@ -204,9 +206,9 @@
 
 
                     }
+                    
                 }
-                return statistics;
-            //}
+            return statistics;
         }
     }
 }

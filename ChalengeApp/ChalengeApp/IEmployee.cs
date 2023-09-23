@@ -1,4 +1,6 @@
-﻿namespace ChalengeApp
+﻿using static ChalengeApp.EmployeeBase;
+
+namespace ChalengeApp
 {
     public interface IEmployee
     {
@@ -6,7 +8,7 @@
 
         string Surname { get; }
 
-        int Age { get; }
+        //int Age { get; }
 
         void AddGrade(float grade);
 
@@ -20,6 +22,8 @@
 
         void AddGrade(string grade);
 
+        event GradeAddedDelegate GradeAdded;
         Statistics GetStatistics();
+
     }
 }

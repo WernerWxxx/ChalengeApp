@@ -1,31 +1,25 @@
-﻿using System.Diagnostics;
-
-namespace ChalengeApp
+﻿namespace ChalengeApp
 {
     public class EmployeeInMemory : EmployeeBase
     {
+        public override event GradeAddedDelegate GradeAdded;
 
         private List<float> grades = new List<float>();
 
-        public EmployeeInMemory(string name, string surname, int age)
-           : base(name, surname, age)
+        public EmployeeInMemory(string name, string surname)
+           : base(name, surname)
         {
-
         }
-
-        private string ReturnMessage(string message)
-        {
-            return message;
-        }
-
         public override void AddGrade(float grade)
         {
             if (grade >= 0 && grade <= 100)
             {
-
-
                 this.grades.Add(grade);
-                Console.WriteLine($"Successfully added: {grade}"); // - Wyswietla liczby przypisane
+
+                if (GradeAdded != null)
+                {
+                    GradeAdded(this, new EventArgs());
+                }
             }
             else
             {
