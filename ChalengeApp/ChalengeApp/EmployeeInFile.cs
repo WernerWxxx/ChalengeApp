@@ -27,7 +27,7 @@ namespace ChalengeApp
               throw new Exception("Invalid grade value! Try again.");
             }
         }
-        ///////// - 1
+
         public override void AddGrade(double grade)
         {
             float gradeAsFloat = (float)grade;

@@ -24,7 +24,7 @@ employee.AddGrade('D');
 employee.AddGrade("6-");
 
 Console.WriteLine("Pracownik : " + employee.Name + " " + employee.Surname);
-                                      //Console.WriteLine(" ma Lat: " + employee.Age);
+                                //Console.WriteLine(" ma Lat: " + employee.Age);
 Console.WriteLine(" ");
 
 //while (true)
