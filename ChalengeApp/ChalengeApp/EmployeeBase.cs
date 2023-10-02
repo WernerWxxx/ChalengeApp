@@ -10,7 +10,7 @@
         {
             this.Name = name;
             this.Surname = surname;
-            //this.Age = age;
+            //this.Age = age;//
 
         }
         public string Name { get; private set; }
