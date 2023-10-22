@@ -72,7 +72,7 @@ internal class Program
 
                 Console.WriteLine("Osoba : " + employee.Name + " " + employee.Surname);
 
-                if (input == "q")//
+                if (input == "q")
                 {
                     break;
                 }

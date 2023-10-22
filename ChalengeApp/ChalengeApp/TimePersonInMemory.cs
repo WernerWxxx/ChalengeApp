@@ -7,7 +7,7 @@
         private List<float> grades = new List<float>();
         public object Statistics;
 
-        public TimePersonInMemory(string name, string surname)//
+        public TimePersonInMemory(string name, string surname)
            : base(name, surname)
         {
         }
