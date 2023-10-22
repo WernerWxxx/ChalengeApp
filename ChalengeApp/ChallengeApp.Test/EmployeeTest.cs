@@ -4,68 +4,53 @@ namespace ChallengeApp.Test
 {
     public class EmployeeTest//
     {
-
         [Test]  //1
-        public void MaxPointsTest()
-        {
-            // arrange
-            var employee = new Employee();
 
-            employee.AddGrade(90);
+        public void MaxTimeTest()
+        {
+            
+            // arrange
+            var employee = new TimePersonInMemory("Wxxx", "Wxxx");
+
+            employee.AddGrade(540);
 
             // act
-            var statistics = employee.Statistics;
+            var statistics = employee.GetStatistics();
 
             // assert
-            Assert.AreEqual(90, statistics.Max);
+            Assert.AreEqual(540, statistics.Max);
 
         }
 
 
         [Test]  //2
-        public void MinPointsTest()
+        public void MinTimesTest()
         {
             // arrange
-            var employee = new Employee();
+            var employee = new TimePersonInMemory("Wxxx", "Wxxx");
 
-            employee.AddGrade(20);
+            employee.AddGrade(30);
 
             // act
-            var statistics = employee.Statistics;
+            var statistics = employee.GetStatistics();
 
             // assert
-            Assert.AreEqual(20, statistics.Min);
+            Assert.AreEqual(30, statistics.Min);
 
         }
 
         [Test]  // 3
-        public void AverageLetterPointsTest()
+        public void AverageTimeTest()
         {
             // arrange
-            var employee = new Employee();
-            employee.AddGrade(90);
-            employee.AddGrade(20);
+            var employee = new TimePersonInMemory("Wxxx", "Wxxx");
+            employee.AddGrade(165);
 
             // act
-            var statistics = employee.Statistics;
+            var statistics = employee.GetStatistics();
 
             // assert
-            Assert.AreEqual('C', statistics.AverageLetter);
-        }
-
-        [Test]  // 4
-        public void AveragePointsTest()
-        {
-            // arrange
-            var employee = new Employee();
-            employee.AddGrade(90);
-            employee.AddGrade(20);
-
-            // act
-            var statistics = employee.Statistics;
-
-            // assert
-            Assert.AreEqual(55, statistics.Average);
+            Assert.AreEqual(165, statistics.Average);
         }
     }
 }
