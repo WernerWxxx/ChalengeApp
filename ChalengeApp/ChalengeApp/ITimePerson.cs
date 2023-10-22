@@ -8,7 +8,7 @@ namespace ChalengeApp
 
         string Surname { get; }
 
-        //int Age { get; }//
+        //int Age { get; }
 
         void AddGrade(float grade);
 

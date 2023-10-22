@@ -80,7 +80,7 @@
                     }
                 }
             }
-            return statistics;//
+            return statistics;
         }
     }
 }
