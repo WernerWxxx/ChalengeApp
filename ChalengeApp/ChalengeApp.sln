@@ -5,7 +5,12 @@ VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChalengeApp", "ChalengeApp\ChalengeApp.csproj", "{76DB711F-12E8-4492-B7F2-888CEBC16CEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChallengeApp.Test", "ChallengeApp.Test\ChallengeApp.Test.csproj", "{80F78564-FF66-40F9-AE42-2C4F42F73714}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChallengeApp.Test", "ChallengeApp.Test\ChallengeApp.Test.csproj", "{80F78564-FF66-40F9-AE42-2C4F42F73714}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DF8D3747-CCBB-4053-A399-C99756C684D3}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
